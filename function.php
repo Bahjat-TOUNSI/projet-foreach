@@ -5,3 +5,9 @@
 // Il existe plusieurs solutions pour afficher le résultat demandé
 
 global $song;
+
+foreach ($song as $value){
+    echo $value . "<br>";
+}
+
+//var_dump($song);
