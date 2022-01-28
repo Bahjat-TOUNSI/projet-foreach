@@ -7,10 +7,18 @@
 global $song;
 
 //var_dump($song);
-foreach ((array) $song as $key => $partie){
-   foreach ((array) $partie as $ligne){
-       echo $ligne . "<br>";
-    }
-    echo "<br>";
+foreach ($song as $key => $value){
 
+    if($key === "title"){
+        echo $value."<br>";
+    }
+    if($key === "refrain"){
+        echo "<br>";
+        foreach ($value as $lyrics){
+            echo $lyrics."<br>";
+        }
+    }
+    if($key === "author"){
+        echo "<br>".$value;
+    }
 }
