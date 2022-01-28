@@ -6,8 +6,11 @@
 
 global $song;
 
-foreach ($song as $value){
-    echo $value . "<br>";
-}
-
 //var_dump($song);
+foreach ((array) $song as $key => $partie){
+   foreach ((array) $partie as $ligne){
+       echo $ligne . "<br>";
+    }
+    echo "<br>";
+
+}
