@@ -7,17 +7,21 @@
 global $song;
 
 
-
-    foreach ($song as $keypart => $part) {
-        if ($keypart === "title" || $keypart === "author") {
-            echo $part . "<br>";
-        }
-        else {
-            foreach ($part as $key => $chorusORverse) {
-                foreach ($chorusORverse as $lyrics) {
-                    echo $lyrics . "<br>";
-                }
+foreach ($song as $keypart => $part) {
+    if ($keypart === "title") {
+        echo "$part<br>";
+    }
+    if ($keypart === "data") {
+        echo "<br>";
+        foreach ($part as $key => $chorusORverse) {
+            foreach ($chorusORverse as $lyrics) {
+                print ($key) . " : ";
+                echo $lyrics . "<br>";
             }
             echo "<br>";
         }
     }
+    if ($keypart === "author") {
+        echo $part ;
+    }
+}
