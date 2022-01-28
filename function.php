@@ -6,18 +6,40 @@
 
 global $song;
 
-//var_dump($song);
-foreach ($song as $key => $value){
 
-    if($key === "title"){
-        echo $value."<br>";
+foreach ($song as $key => $value) {
+
+    if ($key === "title") {
+        echo $value . "<br>";
     }
-    if($key === "refrain"){
+    if ($key === "chorus") {
+        echo "<br>";
+        foreach ($value as $lyrics) {
+            echo $lyrics . "<br>";
+        }
+    }
+    if ($key === "first_verse") {
+        echo "<br>";
+        foreach ($value as $lyrics) {
+            echo $lyrics . "<br>";
+        }
+    }
+}
+foreach ($song as $key => $value){
+    if ($key === "chorus") {
+        echo "<br>";
+        foreach ($value as $lyrics) {
+            echo $lyrics . "<br>";
+        }
+    }
+
+    if($key === "second_verse"){
         echo "<br>";
         foreach ($value as $lyrics){
             echo $lyrics."<br>";
         }
     }
+
     if($key === "author"){
         echo "<br>".$value;
     }
