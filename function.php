@@ -8,38 +8,27 @@ global $song;
 
 
 foreach ($song as $keypart => $part) {
-    if ($keypart === "title") {
-        echo $part . "<br>";
+    if ($keypart === "title" || $keypart === "author") {
+        echo $part;
     }
     if ($keypart === "data") {
-        echo "<br>";
         foreach ($part as $key => $chorusORverse) {
-            if ($key === "chorus_1") {
-                foreach ($chorusORverse as $keyLyrics => $lyrics) {
-                    print ($key) . " : ";
-                    echo "ligne => " . $keyLyrics . " " . $lyrics . "<br>";
+           echo "<br>";
+           // echo [0];
+            //echo "<br><br>";
+            if ($key === "verse"){
+                foreach ($chorusORverse as $verse ){
+                    foreach ( $song["data"]["chorus"]["chorus_1"] as $chorusLyrics) {
+                        echo $chorusLyrics . "<br>";
+                    }
+                    echo "<br>";
+                    foreach ($verse as $lyrics){
+                        echo ($lyrics)."<br>";
+                    }
+                    echo "<br>";
                 }
             }
-            if ($key === "first_verse") {
-                foreach ($chorusORverse as $keyLyrics => $lyrics) {
-                    echo "$key : ligne => $keyLyrics $lyrics<br>";
-                }
-            }
-            if ($key === "chorus_2") {
-                foreach ($chorusORverse as $keyLyrics => $lyrics) {
-                    echo "$key : ligne => $keyLyrics $lyrics<br>";
-                }
-            }
-            if ($key === "second_verse") {
-                foreach ($chorusORverse as $keyLyrics => $lyrics) {
-                    echo "$key : ligne => $keyLyrics $lyrics<br>";
-                }
-            }
-            echo "<br>";
         }
-    }
-    if ($keypart === "author") {
-        echo $part ;
     }
 }
 
