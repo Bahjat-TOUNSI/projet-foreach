@@ -9,36 +9,15 @@ global $song;
 
 
     foreach ($song as $keypart => $part) {
-        if ($keypart === "title") {
+        if ($keypart === "title" || $keypart === "author") {
             echo $part . "<br>";
         }
-        if ($keypart === "data") {
-            echo "<br>";
+        else {
             foreach ($part as $key => $chorusORverse) {
-                if ($key === "chorus_1") {
-                    foreach ($chorusORverse as $lyrics) {
-                        echo $lyrics . "<br>";
-                    }
+                foreach ($chorusORverse as $lyrics) {
+                    echo $lyrics . "<br>";
                 }
-                if ($key === "first_verse") {
-                    foreach ($chorusORverse as $lyrics) {
-                        echo $lyrics . "<br>";
-                    }
-                }
-                if ($key === "chorus_2") {
-                    foreach ($chorusORverse as $lyrics) {
-                        echo $lyrics . "<br>";
-                    }
-                }
-                if ($key === "second_verse") {
-                    foreach ($chorusORverse as $lyrics) {
-                        echo $lyrics . "<br>";
-                    }
-                }
-                echo "<br>";
             }
-        }
-        if ($keypart === "author") {
-            echo $part ;
+            echo "<br>";
         }
     }
