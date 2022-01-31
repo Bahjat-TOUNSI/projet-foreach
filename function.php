@@ -6,21 +6,29 @@
 
 global $song;
 
+echo $song ["title"] . "<br>";
 
-foreach ($song as $key => $value){
+foreach ($song as $keypart => $part) {
 
-    if($key === "title"){
-        echo $value."<br>";
-    }
-    if($key === "refrain"){
-        echo "<br>";
-        foreach ($value as $lyrics){
-            echo $lyrics."<br>";
+    // echo "<br>";
+    if ($keypart === "data") {
+
+        foreach ($part as $chorusORverse) {
+            echo "<br>";
+
+
+            foreach ($chorusORverse as $key => $line) {
+                //var_dump($key);
+                //var_dump($line);
+                if ($key % 2 === 0) {
+                    echo $line . "<br>";
+                }
+
+            }
+
         }
+        echo "<br>";
     }
-    if($key === "author"){
-        echo "<br>".$value;
-    }
+
 }
-
-
+    echo $song ["author"];
